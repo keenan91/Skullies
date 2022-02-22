@@ -1036,7 +1036,7 @@ function App() {
         sphereBody.position.x = 217
       }
 
-      world.step(1 / 60, delta, 3)
+      world.step(1 / 60, delta, 1)
       ThreeMeshUI.update()
       updateButtons()
       prevTime = time
