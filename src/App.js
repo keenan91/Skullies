@@ -107,7 +107,7 @@ let wallZ = 45
 let leftCorridorX = -32.5
 let rightCorridorX = 32.5
 let keyCBool = true
-const gui = new dat.GUI({width: 800})
+//const gui = new dat.GUI({width: 800})
 const loader = new GLTFLoader()
 
 //wallImage.repeat.x = 2
@@ -139,10 +139,10 @@ const groundMaterial = new THREE.MeshStandardMaterial({map: groundImage})
 groundMaterial.normalMap = groundImageNormalMap
 groundMaterial.aoMap = groundImageAO
 groundMaterial.displacementMap = groundImageDisp
-gui.add(wallMaterial, 'metalness').min(0).max(1).step(0.01)
+/* gui.add(wallMaterial, 'metalness').min(0).max(1).step(0.01)
 gui.add(wallMaterial, 'roughness').min(0).max(1).step(0.01)
 gui.add(wallMaterial, 'displacementScale').min(0).max(100).step(0.01)
-gui.add(wallMaterial, 'aoMapIntensity').min(0).max(100).step(0.01)
+gui.add(wallMaterial, 'aoMapIntensity').min(0).max(100).step(0.01) */
 
 // Loading in the GLTF Files
 loader.load(
@@ -748,9 +748,9 @@ function App() {
     scene.add(pointLightMintBackWall)
     pointLight.position.set(10, 3, 15)
     pointLight2.position.set(-10, 3, 5)
-    gui.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
+    /*    gui.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
     gui.add(pointLight2, 'distance').min(0).max(100).step(0.01)
-    gui.add(pointLight2, 'decay').min(0).max(10).step(0.01)
+    gui.add(pointLight2, 'decay').min(0).max(10).step(0.01) */
     const ambientLight = new THREE.AmbientLight(0xb85b14)
     //scene.add(ambientLight)
     scene.add(pointLight)
