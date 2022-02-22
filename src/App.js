@@ -775,7 +775,7 @@ function App() {
     const defaultContactMaterial = new CANNON.ContactMaterial(
       defualtMaterial,
       defualtMaterial,
-      {friction: 0.1, restitution: 0},
+      {friction: 0.3, restitution: 0.3},
     )
     world.addContactMaterial(defaultContactMaterial)
     world.defaultContactMaterial = defaultContactMaterial
@@ -791,19 +791,20 @@ function App() {
     })
     world.addBody(boxBody) */
     const sphereBody = new CANNON.Body({
-      mass: 10,
+      mass: 20,
       position: new CANNON.Vec3(40, 0, -255),
       shape: sphereShape,
     })
-    sphereBody.linearDamping = 0.6
+    sphereBody.linearDamping = 0.3
     sphereBody.angularDamping = 0.3
-    sphereBody.damping = 0.3
 
     const sphereBody2 = new CANNON.Body({
       mass: 10,
       position: new CANNON.Vec3(0, 0, -230),
       shape: sphereShape2,
     })
+    sphereBody2.linearDamping = 0.3
+    sphereBody2.angularDamping = 0.3
     world.addBody(sphereBody2)
     world.addBody(sphereBody)
     const floorBody = new CANNON.Body()
@@ -1036,7 +1037,7 @@ function App() {
         sphereBody.position.x = 217
       }
 
-      world.step(1 / 60, delta, 1)
+      world.step(1 / 60, delta, 3)
       ThreeMeshUI.update()
       updateButtons()
       prevTime = time
