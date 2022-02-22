@@ -791,7 +791,7 @@ function App() {
     })
     world.addBody(boxBody) */
     const sphereBody = new CANNON.Body({
-      mass: 2,
+      mass: 10,
       position: new CANNON.Vec3(40, 0, -255),
       shape: sphereShape,
     })
@@ -800,7 +800,7 @@ function App() {
     sphereBody.damping = 0.3
 
     const sphereBody2 = new CANNON.Body({
-      mass: 2,
+      mass: 10,
       position: new CANNON.Vec3(0, 0, -230),
       shape: sphereShape2,
     })
